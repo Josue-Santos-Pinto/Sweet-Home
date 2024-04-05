@@ -1,3 +1,3 @@
-# Sweet Home
+# TourTrekker
 
-### Site para venda e aluguel de casas e apartamentos
+### Site para anuncio e compra de excursões
