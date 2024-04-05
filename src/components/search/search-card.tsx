@@ -1,13 +1,14 @@
-import { PopoverBtn } from "../popover"
-import { Button } from "../ui/button"
-import { DatePickerWithRange } from "./date-ranger"
+import { Button } from "@/components/ui/button"
+import { DatePicker } from "@/components/search/date-picker"
+import { SearchCombobox } from "@/components/search/search-combobox"
+import { SearchIcon } from "lucide-react"
 
 export const SearchCard = () => {
     return (
-        <div className="flex flex-row w-3/4 h-16 items-center justify-center rounded-full border-2 px-10 border-black overflow-hidden">
-            <PopoverBtn title='Onde' />
-            <DatePickerWithRange />
-            <PopoverBtn title='Quem' />
+        <div className="flex flex-row w-3/4 items-center gap-4 justify-center rounded-full p-10">
+            <SearchCombobox />
+            <DatePicker />
+            <Button size='icon' className="size-10"><SearchIcon className="size-6"/></Button>
         </div>
     )
 }
