@@ -10,10 +10,13 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import { apiTeste } from "@/data/apiTeste"
+import { Image } from "@/types/tour"
 
+type Props = {
+  images: Image[]
+}
 
-
-export function TourCarousel() {
+export function TourCarousel({images}:Props) {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
   const [count, setCount] = React.useState(0)
@@ -40,7 +43,7 @@ export function TourCarousel() {
             align: "center",
          }}>
         <CarouselContent>
-        {apiTeste.images.map((i, index)=>(
+        {images.map((i, index)=>(
             <CarouselItem key={index} >
                 <Card>
                     <CardContent className="w-full h-72">
@@ -61,7 +64,7 @@ export function TourCarousel() {
           
         
         <div className="w-full flex flex-row justify-center items-center gap-2 absolute bottom-3 z-10 ">
-          {apiTeste.images.map((i,index)=>(
+          {images.map((i,index)=>(
             <div key={i.id} className={`rounded-full ${i.id == current ? 'w-2 h-2 bg-white' : 'w-1 h-1 bg-slate-400'} `} />
           ))}
         </div>

@@ -1,14 +1,18 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import TourArea from "@/components/tour/tour-area";
+import { Suspense } from "react";
+import { TourSkeleton } from "@/components/tour/tour-skeleton";
 
 
 const Page = () => {
   return (
-    <div>
+    <div className="w-full">
       <Header />
-        <div>
-          <TourArea />
+        <div className="mx-3">
+          <Suspense fallback={<TourSkeleton />}>
+            <TourArea />
+          </Suspense>
         </div>
       <Footer />
     </div>
