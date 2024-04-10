@@ -34,20 +34,39 @@ export function TourCarousel() {
   }, [api])
 
   return (
-    <div className="w-full overflow-hidden rounded-xl">
-      <Carousel setApi={setApi} className="max-w-xs bg-white cursor-pointer"  
+    <div className="w-full h-72 overflow-hidden rounded-xl">
+      <Carousel setApi={setApi} className="group max-w-xs w-full relative bg-white cursor-pointer"  
         opts={{
-            align: "start",
+            align: "center",
             loop: true,
          }}>
         <CarouselContent>
-        
         {apiTeste.images.map((i, index)=>(
-            <CarouselItem key={index}>
-                <img key={i.id} src={i.img} className="object-cover" />    
+            <CarouselItem key={index} >
+                <Card>
+                    <CardContent className="w-full h-72">
+                        <img key={i.id} src={i.img} className="w-full h-full object-cover " />     
+                    </CardContent>
+                </Card>
             </CarouselItem>
           ))} 
+
         </CarouselContent>
+
+        <div className="absolute left-16 top-1/2 hidden group-hover:block">
+          <CarouselPrevious />
+        </div>
+        <div className="absolute right-16 top-1/2 hidden group-hover:block">
+          <CarouselNext />
+        </div>
+          
+        
+        <div className="w-full flex flex-row justify-center items-center gap-2 absolute bottom-3 z-10 ">
+          {apiTeste.images.map((i,index)=>(
+            <div key={i.id} className={`rounded-full ${i.id == current ? 'w-2 h-2 bg-white' : 'w-1 h-1 bg-slate-400'} `} />
+          ))}
+        </div>
+        
       </Carousel>
      
             
