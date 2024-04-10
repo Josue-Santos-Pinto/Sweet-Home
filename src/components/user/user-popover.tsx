@@ -7,6 +7,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { MenuIcon, UserIcon } from "lucide-react"
+import { UserDialog } from "./user-dialog"
 
 export function UserPopover() {
   return (
@@ -15,8 +16,8 @@ export function UserPopover() {
         <Button className="flex justify-around rounded-full gap-2" variant="outline"><MenuIcon className="size-4" /><UserIcon /></Button>
       </PopoverTrigger>
       <PopoverContent className="w-62 rounded-xl flex flex-col">
-        <Button variant='link'>Cadastrar-se</Button>
-        <Button variant='link'>Entrar</Button>
+        <UserDialog title='Cadastrar-se' />
+        <UserDialog title='Entrar' />
       </PopoverContent>
     </Popover>
   )

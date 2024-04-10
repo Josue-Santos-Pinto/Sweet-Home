@@ -38,7 +38,6 @@ export function TourCarousel() {
       <Carousel setApi={setApi} className="group max-w-xs w-full relative bg-white cursor-pointer"  
         opts={{
             align: "center",
-            loop: true,
          }}>
         <CarouselContent>
         {apiTeste.images.map((i, index)=>(
