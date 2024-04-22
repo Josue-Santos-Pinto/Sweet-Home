@@ -2,8 +2,9 @@ import { Tour } from "@/types/tour";
 
 export const apiTeste: Tour[] = [{
     id: 1,
+    title: 'Viagem para Rio de Janeiro',
     address: {
-        state: 'Rio de Janeiro',
+        state: 'RJ',
         country: 'Brasil',
         city: 'Rio de Janeiro',
     },
@@ -24,6 +25,7 @@ export const apiTeste: Tour[] = [{
 },
 {
     id: 2,
+    title: 'Viagem para Rio de Janeiro',
     address: {
         state: 'São Paulo',
         country: 'Brasil',

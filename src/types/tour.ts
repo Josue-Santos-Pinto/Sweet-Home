@@ -6,6 +6,7 @@ export type Image = {
 
 export type Tour = {
     id: number,
+    title: string;
     address: {
         state: string,
         country: string,
